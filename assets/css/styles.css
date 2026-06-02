@@ -1,11 +1,48 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --green-900: #0F5132;
+    --green-600: #2E7D5B;
+    --mint-100: #D1F2E1;
+
+    --bg: #F3FBF6;
+    --white: #FFFFFF;
+    --text: #1C1F23;
+    --muted: #6B7280;
+    --border: #E6EAEA;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(209, 242, 225, 0.35), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(46, 125, 91, 0.08), transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-alt {
+    background: #EAF7EF;
 }
 
 /* NAVBAR */
@@ -28,6 +65,25 @@ body {
     text-decoration: none;
 }
 
+.card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(15, 81, 50, 0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 /* BUTTON */
 .btn {
     background: #00b894;
@@ -35,6 +91,34 @@ body {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+}
+
+.btn-primary {
+    background: var(--green-900);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn-outline {
+    border: 1px solid var(--green-900);
+    color: var(--green-900);
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+    opacity: 0.9;
+}
+
+.btn.ghost {
+    border: 1px solid #0F5132;
+    color: #0F5132;
+    padding: 12px 20px;
+    border-radius: 8px;
 }
 
 /* HERO */
@@ -47,54 +131,45 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
+    padding: 120px 80px;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 37, 64, 0.6);
+.hero-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
 }
 
-.hero-content {
-    position: relative;
-    max-width: 800px;
-    padding: 20px;
+.hero-text {
+    max-width: 600px;
+}
+
+.badge {
+    background: #D1F2E1;
+    color: #0F5132;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
 }
 
 .hero h1 {
-    font-size: 52px;
-    margin-bottom: 20px;
+    font-size: 54px;
+    line-height: 1.1;
+    color: #1C1F23;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.9;
+    margin-top: 20px;
+    color: #555;
+    font-size: 16px;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.btn.primary {
-    background: #00b894;
-    padding: 12px 25px;
-    border-radius: 6px;
-    color: white;
-    text-decoration: none;
-}
-
-.btn.secondary {
-    border: 2px solid white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    color: white;
-    text-decoration: none;
+.hero-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
 /* SERVICES */
@@ -223,6 +298,65 @@ body {
     font-style: italic;
 }
 
+
+.page-hero {
+    padding: 80px;
+    text-align: center;
+    background: #f5f7fa;
+}
+
+.page-hero h1 {
+    font-size: 40px;
+}
+
+/* Generic grids */
+.services-grid,
+.doctors-grid,
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 60px;
+}
+
+.service-box,
+.doctor-box,
+.blog-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Forms */
+.contact-form,
+.appointment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+    margin: auto;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #00b894;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
 
 
 
