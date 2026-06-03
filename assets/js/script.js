@@ -23,6 +23,7 @@ function loadComponent(id, file) {
             // Re-bind events AFTER navbar loads
             initNavbarInteractions();
             highlightActiveLink();
+            initDropdowns();
         })
         .catch(error => {
             console.error("Component load error:", error);
@@ -43,6 +44,20 @@ function initNavbarInteractions() {
             mobileMenu.classList.toggle("active");
         });
     }
+}
+
+
+function initDropdowns() {
+    const dropdowns = document.querySelectorAll(".dropdown-toggle");
+
+    dropdowns.forEach(toggle => {
+        toggle.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const menu = toggle.nextElementSibling;
+            menu.classList.toggle("active");
+        });
+    });
 }
 
 /* =========================
