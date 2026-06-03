@@ -22,10 +22,12 @@ function loadComponent(id, file) {
 
             // Re-bind events AFTER navbar loads
             initNavbarInteractions();
+            highlightActiveLink();
         })
         .catch(error => {
             console.error("Component load error:", error);
         });
+   
 }
 
 /* =========================
@@ -89,3 +91,17 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("footer-placeholder", "components/footer.html");
 
 });
+
+
+function highlightActiveLink() {
+    const links = document.querySelectorAll(".nav-left a");
+    const currentPath = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        const linkPath = link.getAttribute("href").split("/").pop();
+
+        if (linkPath === currentPath) {
+            link.classList.add("active-link");
+        }
+    });
+}
