@@ -14,7 +14,146 @@
 <body>
 
     <!-- NAVBAR -->
-    <div id="navbar-placeholder"></div>
+    <header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+    <!-- LEFT LINKS -->
+    <nav class="nav-left">
+
+    <!-- HOME -->
+    <a href="index.html">Home</a>
+
+    <!-- ABOUT DROPDOWN -->
+    <div class="dropdown">
+        <a href="#" class="dropdown-toggle">
+            About Us <span class="arrow">▼</span>
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="about.html">About Kilimani Hospital</a>
+            <a href="servicecharter.html">Service Charter</a>
+            <a href="doctors.html">Our Team</a>
+        </div>
+    </div>
+
+    <!-- SERVICES (optional normal link) -->
+    <a href="services.html">Services</a>
+
+    <!-- CONTACT DROPDOWN -->
+    <div class="dropdown">
+        <a href="#" class="dropdown-toggle">
+            Contact Us <span class="arrow">▼</span>
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="getintouch.html">Get in Touch</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+    <a href="gallery.html">Gallery</a>
+
+    </nav>
+  
+        <!-- CENTER LOGO IMAGE -->
+        <div class="nav-logo">
+            <a href="index.html">
+            <img src="assets/images/logokilimani.png" alt="Kilimani Hospital Logo">
+            </a>
+        </div>
+
+        <!-- RIGHT CTA -->
+        <div class="nav-right">
+
+    <a href="/appointment.html" class="nav-btn">
+        <span>Book</span>
+        <span>Appointment</span>
+    </a>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Our Team</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="appointment.html">Book Appointment</a>
+    </div>
+
+</header>
+
+ <!-- SLIDE -->
+    <section class="hero-slider">
+
+    <div class="slide active">
+        <img src="assets/images/slide1.jpg" alt="Hospital Building">
+        <div class="slide-overlay"></div>
+
+        <div class="slide-content">
+            <h1>Compassionate Healthcare Excellence</h1>
+            <p>Providing trusted medical services with modern facilities and experienced specialists.</p>
+
+            <div class="hero-buttons">
+                <a href="appointment.html" class="btn-primary">
+                    Book Appointment
+                </a>
+
+                <a href="services.html" class="btn-secondary">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="assets/images/slide2.jpg" alt="Doctors">
+        <div class="slide-overlay"></div>
+
+        <div class="slide-content">
+            <h1>Specialist Care You Can Trust</h1>
+            <p>Our experienced consultants deliver patient-centered treatment across multiple specialties.</p>
+
+            <div class="hero-buttons">
+                <a href="doctors.html" class="btn-primary">
+                    Meet Our Doctors
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="assets/images/slide3.jpg" alt="Hospital Services">
+        <div class="slide-overlay"></div>
+
+        <div class="slide-content">
+            <h1>Advanced Medical Services</h1>
+            <p>Modern diagnostics, emergency care, surgery, outpatient services, and more.</p>
+
+            <div class="hero-buttons">
+                <a href="services.html" class="btn-primary">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</section>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -194,7 +333,6 @@
     </div>
 </footer>    
 
-<script src="assets/js/script.js"></script>
 
 
 </body>

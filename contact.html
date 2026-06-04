@@ -13,7 +13,84 @@
 </head>
 <body>
 
-<div id="navbar-placeholder"></div>
+<!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+    <!-- LEFT LINKS -->
+    <nav class="nav-left">
+
+    <!-- HOME -->
+    <a href="index.html">Home</a>
+
+    <!-- ABOUT DROPDOWN -->
+    <div class="dropdown">
+        <a href="#" class="dropdown-toggle">
+            About Us <span class="arrow">▼</span>
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="about.html">About Kilimani</a>
+            <a href="servicecharter.html">Service Charter</a>
+            <a href="doctors.html">Our Team</a>
+        </div>
+    </div>
+
+    <!-- SERVICES (optional normal link) -->
+    <a href="services.html">Services</a>
+
+    <!-- CONTACT DROPDOWN -->
+    <div class="dropdown">
+        <a href="#" class="dropdown-toggle">
+            Contact Us <span class="arrow">▼</span>
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="getintouch.html">Get in Touch</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+    <a href="gallery.html">Gallery</a>
+
+    </nav>
+  
+        <!-- CENTER LOGO IMAGE -->
+        <div class="nav-logo">
+            <a href="index.html">
+            <img src="assets/images/logokilimani.png" alt="Kilimani Hospital Logo">
+            </a>
+        </div>
+
+        <!-- RIGHT CTA -->
+        <div class="nav-right">
+
+    <a href="/appointment.html" class="nav-btn">
+        <span>Book</span>
+        <span>Appointment</span>
+    </a>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Our Team</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="appointment.html">Book Appointment</a>
+    </div>
+
+</header>
 
 <section class="container contact">
     <div class="card">
@@ -35,11 +112,6 @@
 </section>
 
 
-<script src="assets/js/script.js"></script>
-
-    <script>
-        loadComponent("navbar-placeholder", "components/navbar.html");
-    </script>
 
 </body>
 </html>

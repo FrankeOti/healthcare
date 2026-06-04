@@ -16,6 +16,7 @@ a {
 
 body {
     font-family: "Inter", sans-serif;
+    padding-top: 90px;
     background: var(--bg);
     color: var(--text);
     margin: 0;
@@ -70,7 +71,7 @@ section {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 1000;
 
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
@@ -101,13 +102,15 @@ section {
     font-weight: 500;
     transition: 0.3s;
     position: relative;
+    padding-bottom: 6px;
+    display: inline-block;
 }
 
 .nav-left a.active-link::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: 0;
     width: 100%;
     height: 2px;
     background: #2E7D5B;
@@ -132,23 +135,14 @@ section {
 
 /* SCROLLED STATE */
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 6px 40px;
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-.navbar.scrolled .nav-container {
-    padding: 10px 40px;
-}
 
 .navbar.scrolled .nav-logo img {
     height: 50px;
-}
-
-.navbar.scrolled {
-    box-shadow: 0 6px 25px rgba(0,0,0,0.12);
 }
 
 /* RIGHT SIDE */
@@ -244,6 +238,10 @@ section {
     text-decoration: none;
     color: #1C1F23;
     font-size: 13px;
+}
+
+.dropdown-menu.active {
+    display: flex;
 }
 
 .dropdown-menu a:hover {
@@ -367,9 +365,117 @@ section {
     border-radius: 8px;
 }
 
+/* SLIDE IN ANIMATION */
+.hero-slider {
+    position: relative;
+    z-index: 1;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-overlay {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.slide-content {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 8%;
+
+    transform: translateY(-50%);
+
+    color: white;
+    max-width: 700px;
+}
+
+.slide-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.slide-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #0F5132;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #0F5132;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+
+    cursor: pointer;
+}
+
+.dot.active {
+    background: white;
+}
+
+
 /* HERO */
 .hero {
     height: 80vh;
+    position: relative;
     background: url("assets/images/kilimanihospital.jpg") center/cover no-repeat;
     position: relative;
     display: flex;
@@ -636,6 +742,20 @@ button {
         justify-content: space-between;
         width: 100%;
     }
+
+    .slide-content {
+        left: 5%;
+        right: 5%;
+    }
+
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
 }
 
 .footer {
