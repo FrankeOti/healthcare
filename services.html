@@ -8,88 +8,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <!-- NAVBAR -->
-    <header class="navbar" id="navbar">
-
-    <div class="nav-container">
-
-    <!-- LEFT LINKS -->
-    <nav class="nav-left">
-
-    <!-- HOME -->
-    <a href="index.html">Home</a>
-
-    <!-- ABOUT DROPDOWN -->
-    <div class="dropdown">
-        <a href="#" class="dropdown-toggle">
-            About Us <span class="arrow">▼</span>
-        </a>
-
-        <div class="dropdown-menu">
-            <a href="about.html">About Kilimani</a>
-            <a href="servicecharter.html">Service Charter</a>
-            <a href="doctors.html">Our Team</a>
-        </div>
-    </div>
-
-    <!-- SERVICES (optional normal link) -->
-    <a href="services.html">Services</a>
-
-    <!-- CONTACT DROPDOWN -->
-    <div class="dropdown">
-        <a href="#" class="dropdown-toggle">
-            Contact Us <span class="arrow">▼</span>
-        </a>
-
-        <div class="dropdown-menu">
-            <a href="getintouch.html">Get in Touch</a>
-            <a href="feedback.html">Feedback</a>
-        </div>
-    </div>
-
-    <a href="gallery.html">Gallery</a>
-
-    </nav>
-  
-        <!-- CENTER LOGO IMAGE -->
-        <div class="nav-logo">
-            <a href="index.html">
-            <img src="assets/images/logokilimani.png" alt="Kilimani Hospital Logo">
-            </a>
-        </div>
-
-        <!-- RIGHT CTA -->
-        <div class="nav-right">
-
-    <a href="/appointment.html" class="nav-btn">
-        <span>Book</span>
-        <span>Appointment</span>
-    </a>
-
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    </div>
-
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="doctors.html">Our Team</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="appointment.html">Book Appointment</a>
-    </div>
-
-</header>
+    <div id="navbar-placeholder"></div>
 
 <section class="container">
     <h1>Our Services</h1>
@@ -127,6 +53,14 @@
     </div>
 </section>
 
+<div id="footer-placeholder"></div>
+
+<script src="assets/js/script.js"></script>
+
+    <script>
+        loadComponent("navbar-placeholder", "components/navbar.html");
+        loadComponent("footer-placeholder", "components/footer.html");
+    </script>
 
 </body>
 </html>

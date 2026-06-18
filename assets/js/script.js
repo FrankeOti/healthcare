@@ -35,15 +35,30 @@ function loadComponent(id, file) {
 ========================= */
 
 function highlightActiveLink() {
-    const links = document.querySelectorAll(".nav-left a");
-    const currentPage = window.location.pathname.split("/").pop();
 
-    links.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
 
-        if (linkPage === currentPage) {
+     // TOP NAVBAR LINKS (underline)
+    document.querySelectorAll(".nav-left a").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (href === currentPage) {
             link.classList.add("active-link");
         }
+
+    });
+    
+
+    document.querySelectorAll(".dropdown-menu a").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (href === currentPage) {
+            link.classList.add("active");
+        }
+
     });
 }
 
