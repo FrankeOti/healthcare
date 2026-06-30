@@ -3,14 +3,15 @@
 ========================= */
 
 function loadComponent(id, file) {
+
     const target = document.getElementById(id);
 
     if (!target) {
         console.error(`Missing placeholder: ${id}`);
-        return;
+        return Promise.resolve();
     }
 
-    fetch(file)
+    return fetch(file)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load ${file}`);
@@ -20,14 +21,14 @@ function loadComponent(id, file) {
         .then(data => {
             target.innerHTML = data;
 
-            // Re-bind events AFTER navbar loads
             initNavbarInteractions();
-            highlightActiveLink()
-            initDropdowns()
+            highlightActiveLink();
+            initDropdowns();
         })
         .catch(error => {
-            console.error("Component load error:", error);
+            console.error(error);
         });
+
 }
 
 /* =========================
@@ -167,8 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadComponent("footer-placeholder", "components/footer.html")
     ]).then(() => {
 
-        initNavbarScroll();
-        initActiveLinks();
+        highlightActiveLink();
         initHeroSlider();
 
     });
