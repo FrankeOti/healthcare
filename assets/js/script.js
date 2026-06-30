@@ -121,60 +121,60 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
-/* =========================
-   INIT COMPONENTS (IMPORTANT)
-========================= */
+    /* ==========================================
+   HERO IMAGE SLIDER
+========================================== */
+
+function initHeroSlider() {
+
+    const images = document.querySelectorAll(".hero-image");
+
+    if (!images.length) return;
+
+    let current = 0;
+
+    function showImage(index) {
+
+        images.forEach(image => {
+        image.classList.remove("active");
+    });
+
+    images[index].classList.add("active");
+
+    }
+
+    showImage(current);
+
+    setInterval(() => {
+
+        current++;
+
+        if (current >= images.length) {
+            current = 0;
+        }
+
+        showImage(current);
+
+    }, 5000);
+
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 
     // Load components safely AFTER DOM is ready
-    loadComponent("navbar-placeholder", "components/navbar.html");
-    loadComponent("footer-placeholder", "components/footer.html");
+    Promise.all([
+        loadComponent("navbar-placeholder", "components/navbar.html"),
+        loadComponent("footer-placeholder", "components/footer.html")
+    ]).then(() => {
 
+        initNavbarScroll();
+        initActiveLinks();
+        initHeroSlider();
 
-let slides = document.querySelectorAll(".slide");
-let current = 0;
-
-const progressBar = document.querySelector(".progress-bar");
-const slider = document.querySelector(".hero-slider");
-
-const SLIDE_TIME = 5000;
-
-function showSlide(index) {
-    slides.forEach((s, i) => {
-        s.classList.remove("active");
-        if (i === index) s.classList.add("active");
     });
 
-    // restart progress bar
-    if (progressBar) {
-        progressBar.style.transition = "none";
-        progressBar.style.width = "0%";
 
-        setTimeout(() => {
-            progressBar.style.transition = `width ${SLIDE_TIME}ms linear`;
-            progressBar.style.width = "100%";
-        }, 50);
-    }
-}
 
-function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-}
-
-let interval = setInterval(nextSlide, SLIDE_TIME);
-
-slider.addEventListener("mouseenter", () => {
-    clearInterval(interval);
-    if (progressBar) progressBar.style.animationPlayState = "paused";
-});
-
-slider.addEventListener("mouseleave", () => {
-    interval = setInterval(nextSlide, SLIDE_TIME);
-});
-
-showSlide(0);
 
 
 });
