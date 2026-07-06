@@ -15,6 +15,42 @@
 </head>
 <body>
 
+    <svg width="0" height="0" aria-hidden="true">
+    <defs>
+        <clipPath id="heroClip" clipPathUnits="objectBoundingBox">
+
+            <!--
+                Left edge is longer than right.
+                Top slopes downward.
+                Bottom slopes upward.
+                Rounded corners are created with quadratic curves.
+            -->
+
+            <path d="
+                M 0.00,0.05
+
+                Q 0.00,0.00 0.05,0.00
+
+                L 0.75,0.06
+
+                Q 1.00,0.07 1.00,0.12
+
+                L 1.00,0.88
+
+                Q 1.00,0.93 0.95,0.94
+
+                L 0.05,1.00
+
+                Q 0.00,1.00 0.00,0.95
+
+                Z
+            "/>
+
+        </clipPath>
+    </defs>
+</svg>
+
+
     <!-- NAVBAR -->
     <div id="navbar-placeholder"></div>
 
@@ -24,67 +60,70 @@
 
     <div class="hero-left">
 
-        <span class="hero-badge">
-            Trusted Healthcare Provider
-        </span>
+    <span class="hero-badge">
+        ---- COMPASSIONATE, AFFORDABLE, QUALITY CARE.
+    </span>
 
-        <h1>
-            Compassionate Care,<br>
-            Close to Home.
-        </h1>
+    <h1>
+        Your Health,<br>
+        Our Priority.
+    </h1>
 
-        <p>
-            We provide patient-centered healthcare with experienced
-            doctors, advanced diagnostics and modern facilities.
-        </p>
+    <p>
+        Kilimani Hospital delivers comprehensive, patient-centered healthcare
+        through experienced specialists, modern medical technology, and a
+        commitment to exceptional care for every family.
+    </p>
 
-        <div class="hero-buttons">
-            <a href="appointment.html" class="btn-primary">
-                Book Appointment
-            </a>
+    <div class="hero-buttons">
 
-            <a href="services.html" class="btn-secondary">
-                Our Services
-            </a>
-        </div>
+        <a href="appointment.html" class="btn-primary">
+            Book Appointment
+        </a>
+
+        <a href="services.html" class="btn-secondary">
+            Our Services
+        </a>
 
     </div>
+
+
+
+</div>
+
+<div class="hero-image-wrapper">
 
     <div class="hero-right">
 
-    <div class="image-frame">
+    <div class="hero-image">
 
-        <div class="image-layer image-layer-1"></div>
-        <div class="image-layer image-layer-2"></div>
+        <img src="assets/images/kilimani7.webp"
+             alt="Patient at Pharmacy Counter">
 
-        <div class="hero-image active">
-            <img src="assets/images/kilimani7.webp" alt="Hospital">
-        </div>
-        
+    </div>
 
-        <div class="hero-image">
-            <img src="assets/images/kilimani5.webp" alt="Hospital">
-        </div>
+    </div>
 
-        <div class="hero-image">
-            <img src="assets/images/kilimani2.webp" alt="Hospital">
+     <!--     <div class="hero-features">
+
+        <div class="hero-feature">
+            <i class="bi bi-heart-pulse"></i>
+            <span>24/7 Emergency Care</span>
         </div>
 
-    </div>
+        <div class="hero-feature">
+            <i class="bi bi-shield-check"></i>
+            <span>Accredited Specialists</span>
+        </div>
 
-    <div class="floating-card hours-card">
-        <h4>Open Today</h4>
-        <p>24 Hours</p>
-    </div>
+        <div class="hero-feature">
+            <i class="bi bi-hospital"></i>
+            <span>Modern Facilities</span>
+        </div>
 
-    <div class="floating-card emergency-card">
-        🚑 Emergency
-    </div>
+    </div> -->
 
-    <div class="floating-card insurance-card">
-        SHA • AAR • CIC
-    </div>
-
+</div>
 </div>
 
 </section>

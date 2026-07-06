@@ -122,43 +122,7 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
-    /* ==========================================
-   HERO IMAGE SLIDER
-========================================== */
 
-function initHeroSlider() {
-
-    const images = document.querySelectorAll(".hero-image");
-
-    if (!images.length) return;
-
-    let current = 0;
-
-    function showImage(index) {
-
-        images.forEach(image => {
-        image.classList.remove("active");
-    });
-
-    images[index].classList.add("active");
-
-    }
-
-    showImage(current);
-
-    setInterval(() => {
-
-        current++;
-
-        if (current >= images.length) {
-            current = 0;
-        }
-
-        showImage(current);
-
-    }, 5000);
-
-}
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -169,12 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]).then(() => {
 
         highlightActiveLink();
-        initHeroSlider();
 
     });
-
-
-
-
 
 });
