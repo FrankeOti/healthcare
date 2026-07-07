@@ -706,6 +706,163 @@ section {
     line-height: 1.4;
 }
 
+/*==================== INSURANCE STRIP ====================*/
+
+.insurance-strip{
+    margin-top: 24px;
+    padding: 10px 0 20px;
+}
+
+.insurance-row{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 0;
+
+}
+
+.insurance-title{
+
+    padding-right:28px;
+
+    border-right:1px solid #dfe7e2;
+
+    flex-shrink:0;
+
+}
+
+.insurance-title span{
+
+    font-size:.85rem;
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    color:#12693f;
+
+    white-space:nowrap;
+
+}
+
+.insurance-logo{
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0 14px;
+
+}
+
+/* Thin vertical divider */
+
+.insurance-logo:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    width:1px;
+    height:34px;
+
+    background:#e6ece8;
+
+}
+
+.insurance-logo img{
+
+    height:42px;
+    width:auto;
+
+    object-fit:contain;
+
+    transition:.3s ease;
+
+    opacity:.8;
+
+}
+
+.insurance-logo:hover img{
+
+    opacity:1;
+
+    filter:none;
+
+    transform:scale(1.05);
+
+}
+
+.logo-cbk img{
+    height: 80px;
+}
+
+.logo-fa img{
+    height: 45px;
+}
+
+.logo-ga img{
+    height: 45px;
+}
+
+.logo-madison img{
+    background: #DCE5E1;
+    height: 45px;
+}
+
+.logo-maseno img{
+    height: 48px;
+}
+
+.logo-sha img{
+    height: 35px;
+}
+
+
+@media (max-width:992px){
+
+    .insurance-row{
+
+        flex-wrap:wrap;
+
+        gap:20px;
+
+    }
+
+    .insurance-title{
+
+        width:100%;
+
+        text-align:center;
+
+        border-right:none;
+
+        padding-right:0;
+
+        margin-bottom:10px;
+
+    }
+
+    .insurance-logo{
+
+        padding:0 16px;
+
+    }
+
+    .insurance-logo::after{
+
+        display:none;
+
+    }
+
+}
 
 /* SERVICES */
 .services-preview {
