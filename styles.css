@@ -864,6 +864,350 @@ section {
 
 }
 
+/*==================== APPOINTMENT SECTION ====================*/
+
+.appointment-section{
+    padding: 5px 0 20px;
+}
+
+.appointment-grid{
+    display: grid;
+    grid-template-columns: 0.95fr 1.45fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/*==================== CARDS ====================*/
+
+.appointment-info{
+
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+
+}
+
+.info-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:32px;
+
+    border:1px solid #edf2ee;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.05);
+
+}
+
+/*==================== LEFT PANEL ====================*/
+
+.info-card:not(:last-child){
+    margin-bottom:35px;
+}
+
+.info-card h3{
+
+    font-size:1.4rem;
+
+    color:#173a2b;
+
+    margin-bottom:24px;
+
+    font-weight:600;
+
+}
+
+/*==================== PAYMENT ====================*/
+
+.payment-option{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+}
+
+.payment-option:first-child{
+    margin-bottom:24px;
+}
+
+.payment-option i{
+
+    width:40px;
+    height:40px;
+
+    border-radius:14px;
+
+    background:#edf7f1;
+
+    color:#12693f;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+    flex-shrink:0;
+
+}
+
+.payment-option strong{
+
+    color:#173a2b;
+
+    font-size:1rem;
+
+}
+
+.payment-option p{
+
+    color:#6c7772;
+
+    margin-top:4px;
+
+    line-height:1.6;
+
+}
+
+/*==================== OPENING HOURS ====================*/
+
+.opening-hours{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.opening-hours li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #edf2ee;
+
+}
+
+.opening-hours li:last-child{
+
+    border-bottom:none;
+
+}
+
+.opening-hours span:first-child{
+
+    color:#6b7d73;
+
+    font-weight:500;
+
+}
+
+.opening-hours span:last-child{
+
+    color:#173a2b;
+
+}
+
+.status-badge{
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    min-width: 120px;
+
+    text-align: center;
+
+    transition:.3s;
+
+}
+
+.status-badge.open{
+
+    background:#eaf8ef;
+
+    color:#12693f;
+
+}
+
+.status-badge.closed{
+
+    background:#fdecec;
+
+    color:#c0392b;
+
+}
+
+.status-badge.open::before{
+    content:"";
+    display:inline-block;
+    width:10px;
+    height:10px;
+    margin-right:8px;
+    border-radius:50%;
+    background:#16a34a;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(22,163,74,.5);}
+    70%{box-shadow:0 0 0 8px rgba(22,163,74,0);}
+    100%{box-shadow:0 0 0 0 rgba(22,163,74,0);}
+}
+
+/*==================== FORM ====================*/
+
+.appointment-form h3{
+
+    color:#173a2b;
+
+    font-size:1.7rem;
+
+}
+
+.appointment-form form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+    width: 100%;
+    margin: 0;
+
+}
+
+.appointment-form input,
+.appointment-form select{
+
+    width:100%;
+
+    height:58px;
+
+    padding:0 10px;
+
+    border:1px solid #dfe7e2;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    font-size:15px;
+
+    color:#173a2b;
+
+    transition:.3s ease;
+
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus{
+
+    outline:none;
+
+    border-color:#12693f;
+
+    box-shadow:0 0 0 4px rgba(18,105,63,.08);
+
+}
+
+/*==================== TIME ROW ====================*/
+
+.time-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+/*==================== BUTTON ====================*/
+
+.appointment-form button{
+
+    height:50px;
+
+    width: 220px;
+
+    margin: 10px auto 0;
+
+    display: block;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#12693f;
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.appointment-form button:hover{
+
+    background:#0f5b37;
+
+    transform:translateY(-2px);
+
+}
+
+/*==================== RESPONSIVE ====================*/
+
+@media(max-width:992px){
+
+    .appointment-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .appointment-info,
+    .appointment-form{
+
+        padding:28px;
+
+    }
+
+    .time-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
 /* SERVICES */
 .services-preview {
     padding: 80px 60px;

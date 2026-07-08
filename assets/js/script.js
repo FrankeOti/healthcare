@@ -137,3 +137,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+const badge = document.getElementById("statusBadge");
+
+const now = new Date();
+
+const day = now.getDay();      // 0 = Sunday
+const hour = now.getHours();
+const minute = now.getMinutes();
+
+const currentTime = hour * 60 + minute;
+
+// Opening schedule
+const schedule = {
+
+    0: [8*60,18*60],              // Sunday
+
+    1: [8*60,19*60],             // Monday
+
+    2: [8*60,19*60],             // Tuesday
+
+    3: [8*60,19*60],             // Wednesday
+
+    4: [8*60,19*60],             // Thursday
+
+    5: [8*60,19*60],             // Friday
+
+    6: [8*60,18*60]              // Saturday
+
+
+};
+
+const hours = schedule[day];
+
+if(hours && currentTime >= hours[0] && currentTime < hours[1]){
+
+    badge.textContent = "Open Now";
+
+    badge.classList.add("open");
+
+}else{
+
+    badge.textContent = "Closed";
+
+    badge.classList.add("closed");
+
+}
